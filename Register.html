@@ -162,26 +162,26 @@ input:focus,select:focus{
 <div class="badge">REGISTER</div>
 <h2>Create Account</h2>
 
-<form id="registerForm">
+<form action="/register" method="POST">
 
 <div class="input-group">
 <label>Full Name</label>
-<input type="text" required>
+<input type="text" name="name" required>
 </div>
 
 <div class="input-group">
 <label>Email</label>
-<input type="email" required>
+<input type="email" name="email" required>
 </div>
 
 <div class="input-group">
 <label>Password</label>
-<input type="password" required>
+<input type="password" name="password" required>
 </div>
 
 <div class="input-group">
 <label>Role</label>
-<select id="role" required>
+<select name="role" required>
 <option value="">Select Role</option>
 <option value="job">Job Seeker</option>
 <option value="rec">Recruiter</option>
@@ -207,17 +207,21 @@ setInterval(()=>{
   bg[i].classList.remove("active");
   i = (i+1) % bg.length;
   bg[i].classList.add("active");
-}, 3000);
+},3000);
 
-/* ===== USER CODE ===== */
-function code(r){
-  return (r==="rec"?"REC":"JOB")+"-"+Math.random().toString(36).slice(2,8).toUpperCase();
-}
 
-registerForm.onsubmit = e => {
-  e.preventDefault();
-  alert("Account Created ✅\nCode: " + code(role.value));
-};
+
+
+// /* ===== USER CODE ===== */
+// function code(r){
+//   return (r==="rec"?"REC":"JOB")+"-"+Math.random().toString(36).slice(2,8).toUpperCase();
+// }
+
+// registerForm.onsubmit = e => {
+//   e.preventDefault();
+//   alert("Account Created ✅\nCode: " + code(role.value));
+// };
+
 </script>
 
 </body>
